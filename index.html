@@ -1,0 +1,510 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+
+  <meta name=viewport content=“width=800”>
+  <meta name="generator" content="HTML Tidy for Linux/x86 (vers 11 February 2007), see www.w3.org">
+  <style type="text/css">
+  /* latin-ext */
+@font-face {
+font-family: 'Lato';
+font-style: italic;
+font-weight: 400;
+src: local('Lato Italic'), local('Lato-Italic'), url(https://fonts.gstatic.com/s/lato/v15/S6u8w4BMUTPHjxsAUi-qNiXg7eU0.woff2) format('woff2');
+unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+font-family: 'Lato';
+font-style: italic;
+font-weight: 400;
+src: local('Lato Italic'), local('Lato-Italic'), url(https://fonts.gstatic.com/s/lato/v15/S6u8w4BMUTPHjxsAXC-qNiXg7Q.woff2) format('woff2');
+unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+font-family: 'Lato';
+font-style: italic;
+font-weight: 700;
+src: local('Lato Bold Italic'), local('Lato-BoldItalic'), url(https://fonts.gstatic.com/s/lato/v15/S6u_w4BMUTPHjxsI5wq_FQftx9897sxZ.woff2) format('woff2');
+unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+font-family: 'Lato';
+font-style: italic;
+font-weight: 700;
+src: local('Lato Bold Italic'), local('Lato-BoldItalic'), url(https://fonts.gstatic.com/s/lato/v15/S6u_w4BMUTPHjxsI5wq_Gwftx9897g.woff2) format('woff2');
+unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+font-family: 'Lato';
+font-style: normal;
+font-weight: 400;
+src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjxAwXiWtFCfQ7A.woff2) format('woff2');
+unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+font-family: 'Lato';
+font-style: normal;
+font-weight: 400;
+src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjx4wXiWtFCc.woff2) format('woff2');
+unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+font-family: 'Lato';
+font-style: normal;
+font-weight: 700;
+src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v15/S6u9w4BMUTPHh6UVSwaPGQ3q5d0N7w.woff2) format('woff2');
+unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+font-family: 'Lato';
+font-style: normal;
+font-weight: 700;
+src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v15/S6u9w4BMUTPHh6UVSwiPGQ3q5d0.woff2) format('woff2');
+unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+a {
+color: #1772d0;
+text-decoration: none;
+}
+
+a:focus,
+a:hover {
+color: #f09228;
+text-decoration: none;
+}
+
+body,
+td,
+th,
+tr,
+p,
+a {
+font-family: 'Lato', Verdana, Helvetica, sans-serif;
+font-size: 14px
+}
+
+strong {
+font-family: 'Lato', Verdana, Helvetica, sans-serif;
+font-size: 14px;
+}
+
+heading {
+font-family: 'Lato', Verdana, Helvetica, sans-serif;
+font-size: 26px;
+text-decoration: underline;
+}
+
+papertitle {
+font-family: 'Lato', Verdana, Helvetica, sans-serif;
+font-size: 14px;
+font-weight: 700
+}
+
+name {
+font-family: 'Lato', Verdana, Helvetica, sans-serif;
+font-size: 36px;
+}
+
+.one {
+width: 160px;
+height: 160px;
+position: relative;
+}
+
+.two {
+width: 160px;
+height: 160px;
+position: absolute;
+transition: opacity .2s ease-in-out;
+-moz-transition: opacity .2s ease-in-out;
+-webkit-transition: opacity .2s ease-in-out;
+}
+
+.fade {
+transition: opacity .2s ease-in-out;
+-moz-transition: opacity .2s ease-in-out;
+-webkit-transition: opacity .2s ease-in-out;
+}
+
+span.highlight {
+background-color: #ffffd0;
+}
+  </style>
+  <link rel="icon" type="image/png" href="img/avtr.png">
+  <title>Kaustubh Sadekar</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+  </head>
+  <body>
+  <table width="800" border="0" align="center" cellspacing="0" cellpadding="0">
+    <tr>
+    <td>
+      <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+      <tr>
+        <td width="67%" valign="middle">
+        <p align="center">
+          <name>Kaustubh Sadekar</name>
+        </p>
+        <p>
+          I am a Computer Science Ph.D. student at Portland State University, advised by 
+          <a href="https://www.atulingle.com/" target="_blank">Prof. Atul Ingle</a>. My research interests include 3D computer vision, computational Imaging, 
+          and Design of Synthetic dataset generation pipelines.
+        </p>
+        <p>
+          Previously, I was a Senior Research Fellow at the Computer Vision Graphics and Imaging Lab of IIT Gandhinagar, supervised by <a href="https://people.iitgn.ac.in/~shanmuga/index.html" target="_blank">Prof. Shanmuganathan Raman</a>. Before that I worked at the Autonomous Robots and Multi-robot Systems <a href="https://www.sc.iitb.ac.in/robotics/index.html" target="_blank">(ARMS) Lab of the Indian Institute of Technology Bombay</a> as a Research Associate supervised by <a href="https://www.sc.iitb.ac.in/~leena/" target="_blank">Prof. Leena Vachhani</a> and <a href="https://www.me.iitb.ac.in/?q=faculty/Prof.%20Abhishek%20Gupta" target="_blank">Prof. Abhishek Gupta</a>. 
+        </p>
+        <p align=center>
+          <a href="mailto:kaustubh.sdk7@gmail.com">Email</a> &nbsp/&nbsp
+          <a href="pdf/cv.pdf">CV</a> &nbsp/&nbsp
+	        <a href="https://scholar.google.com/citations?user=y9GijuoAAAAJ&hl=en" target="_blank">Google Scholar</a> &nbsp/&nbsp
+          <a href="https://github.com/kaustubh-sadekar" target="_blank">GitHub</a> &nbsp/&nbsp
+          <a href="https://www.linkedin.com/in/kaustubh-sadekar-399a16112/" target="_blank">LinkedIn</a> &nbsp/&nbsp
+          <a href="https://www.youtube.com/channel/UCyEEafuB2F9GYyWD06v2gAw/featured" target="_blank">YoutTube</a> 
+        </p>
+        <!-- <p align="center">
+          <form action="https://www.w3docs.com/" method="get" target="_blank">
+            <button type="submit">Click me</button>
+          </form>
+          <form action="https://www.w3docs.com/" method="get" target="_blank">
+            <button type="submit">Click me</button>
+          </form>
+          <form action="https://www.w3docs.com/" method="get" target="_blank">
+            <button type="submit">Click me</button>
+          </form>
+        </p> -->
+
+        </td>
+        <td width="33%">
+          <a href="img/avtr.png">
+              <img src="img/avtr-circle1.png" width="250px">
+          </a>
+        </td>
+      </tr>
+      </table>
+
+      <!-- Research Publications -->
+      <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+      <tr>
+        <td width="100%" valign="middle">
+          <heading>Publications</heading>
+        </td>
+      </tr>
+      </table>
+
+      <!-- Shadow Art -->
+      <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+        <tr onmouseout="bhnerf_stop()" onmouseover="bhnerf_start()">
+          <td style="padding:25px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='dd_image'><img src='gifs/ShadowArt1.gif' width="150"></div>
+                <img src='gifs/ShadowArt1.gif' width="150">
+              </div>
+          </td>
+          <td style="padding:10px;width:75%;vertical-align:middle">
+            <a href="https://openaccess.thecvf.com/content/WACV2022/html/Sadekar_Shadow_Art_Revisited_A_Differentiable_Rendering_Based_Approach_WACV_2022_paper.html">
+              <papertitle>Shadow Art Revisited: A Differentiable Rendering Based Approach</papertitle>
+            </a>
+            <br>
+            <strong>Kaustubh Sadekar</strong>,
+            <a href="https://sites.google.com/iitgn.ac.in/ashishtiwari/" target="_blank">Ashish Tiwari</a>,
+            <a href="http://people.iitgn.ac.in/~shanmuga/" target="_blank">Shanmuganathan Raman</a>,
+            <br>
+            <em>WACV</em>, 2022
+            <br>
+            <a href="https://kaustubh-sadekar.github.io/ShadowArt-Revisited/" target="_blank">project page</a>/
+            <a href="https://arxiv.org/abs/2107.14539" target="_blank">arXiv</a>/
+            <a href="#">video</a>
+            <p>We use differentiable rendering to create artistic 3D sculptures for shadow art effects.</p>
+          </td>
+        </tr>
+      </table>
+
+      <!-- LS-HDIB -->
+      <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+        <tr onmouseout="bhnerf_stop()" onmouseover="bhnerf_start()">
+          <td style="padding:25px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='dd_image'><img src='gifs/pgNet.gif' width="150"></div>
+                <img src='gifs/pgNet.gif' width="150">
+              </div>
+          </td>
+          <td style="padding:10px;width:75%;vertical-align:middle">
+            <a href="https://arxiv.org/abs/2101.11674">
+              <papertitle>LS-HDIB: A Large Scale Handwritten Document Image Binarization Dataset</papertitle>
+            </a>
+            <br>
+          <strong>Kaustubh Sadekar</strong>,
+          <a href="https://sites.google.com/iitgn.ac.in/ashishtiwari/" target="_blank">Ashish Tiwari</a>,
+          <a href="https://prajwalsingh.github.io/" target="_blank">Prajwal Singh</a>,
+          <a href="http://people.iitgn.ac.in/~shanmuga/" target="_blank">Shanmuganathan Raman</a>,
+          <br>
+          <em>ICPR</em>, 2022
+          <br>
+          <a href="https://kaustubh-sadekar.github.io/LS-HDIB/">project page</a>/
+          <a href="https://arxiv.org/abs/2101.11674">arXiv</a>/
+          <a href="#">video</a>
+          <p></p>
+          <p>We propose a large scale dataset of 1 Million images for the task of hand written document image binarisation (HDIB) with accurate segmentation groundtruth. The dataset includes wide range of degradation effects, document page styles and hand written content, making it 
+            ideal to train large deep learning models for hand written content segmentation.
+          </p>
+        </td>
+      </tr>
+
+      <!-- TreeGCN-ED -->
+      <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+        <tr onmouseout="bhnerf_stop()" onmouseover="bhnerf_start()">
+          <td style="padding:25px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='dd_image'><img src='gifs/TreeGCNED.gif' width="150"></div>
+                <img src='gifs/TreeGCNED.gif' width="150">
+              </div>
+          </td>
+          <td style="padding:10px;width:75%;vertical-align:middle">
+            <a href="https://arxiv.org/abs/2110.03170" target="_blank">
+              <papertitle>TreeGCN-ED: Encoding Point Cloud using a Tree-Structured Graph Network</papertitle>
+            </a>
+            <br>
+          <a href="https://prajwalsingh.github.io/" target="_blank">Prajwal Singh</a>,
+          <strong>Kaustubh Sadekar</strong>,
+          <a href="http://people.iitgn.ac.in/~shanmuga/" target="_blank">Shanmuganathan Raman</a>,
+          <br>
+          <em>arXiv</em>, 2021
+          <br>
+          <a href="https://github.com/prajwalsingh/TreeGCN-ED">project page</a>/
+          <a href="https://arxiv.org/abs/2110.03170">arXiv</a>/
+          <a href="#">video</a>
+          <p></p>
+          <p>We propose a large scale dataset of 1 Million images for the task of hand written document image binarisation with accurate segmentation groundtruth. The dataset includes wide range of degradation effects, document page styles and hand written content, making it 
+            ideal to train large deep learning models for 
+          </p>
+        </td>
+      </tr>
+
+
+      <!-- PROJECTS -->
+      <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+        <tr>
+          <td width="100%" valign="middle">
+            <heading>Projects</heading>
+          </td>
+        </tr>
+      </table>
+  
+      <!-- RGB-D Camera -->
+      <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+        <tr onmouseout="bhnerf_stop()" onmouseover="bhnerf_start()">
+          <td style="padding:25px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='dd_image'><img src='gifs/RGBD_CameraLogo.gif' width="150"></div>
+                <img src='gifs/RGBD_CameraLogo.gif' width="150">
+              </div>
+          </td>
+          <td style="padding:10px;width:75%;vertical-align:middle">
+            <a href="https://kaustubh-sadekar.github.io/portfolio/p040-Low-Cost-RGBD-Camera-For-3D-Perception/" target="_blank">
+              <papertitle>Low-Cost RGB-D Camera For 3D Perception</papertitle>
+            </a>
+            <br>
+            <a href="https://kaustubh-sadekar.github.io/portfolio/p040-Low-Cost-RGBD-Camera-For-3D-Perception/" target="_blank">project page</a>
+            <p>This project aims to create a custom RGB-D stereo camera using two low cost USB cameras. Code for calibration, stereo depth estimation and RGB-D to 3D pointcloud reconstruciton is written using libraries like OpenCV and Open3D. Additional codes for applications - 3D Anagliph Videos and Depth based obstacle avoidance.</p>
+          </td>
+        </tr>
+      </table>
+
+      <!-- Kinect Fusion -->
+      <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+        <tr onmouseout="bhnerf_stop()" onmouseover="bhnerf_start()">
+          <td style="padding:25px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='dd_image'><img src='gifs/KinFu_LivingRoom.gif' width="150"></div>
+                <img src='gifs/KinFu_LivingRoom.gif' width="150">
+              </div>
+          </td>
+          <td style="padding:10px;width:75%;vertical-align:middle">
+            <a href="https://kaustubh-sadekar.github.io/portfolio/p050-implementation-of-kinect-fusion-algorithm-for-3d-reconstruction-using-rgbd-images/" target="_blank">
+              <papertitle>Implementation of Kinect Fusion Algorithm For 3D Reconstruction</papertitle>
+            </a>
+            <br>
+            <a href="https://kaustubh-sadekar.github.io/portfolio/p050-implementation-of-kinect-fusion-algorithm-for-3d-reconstruction-using-rgbd-images/" target="_blank">project page</a>
+            <p>Kinect Fusion is a real-time 3D reconstruction algorithm that generates a 3D model of a given scene using a sequence of depth images. There are some standard opensource implementations for the Kinect Fusion algorithm available online. However, most of them are written in C++. This project aims to create a complete python implementation of the Kinect Fusion algorithm and use <b>vectorization</b> with PyTorch to enable <b>GPU acceleration</b> capabilities.</p>
+          </td>
+        </tr>
+      </table>
+
+      <!-- Kinect Fusion -->
+      <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+        <tr onmouseout="bhnerf_stop()" onmouseover="bhnerf_start()">
+          <td style="padding:25px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='dd_image'><img src='gifs/cyclops.gif' width="150"></div>
+                <img src='gifs/cyclops.gif' width="150">
+              </div>
+          </td>
+          <td style="padding:10px;width:75%;vertical-align:middle">
+            <a href="https://kaustubh-sadekar.github.io/portfolio/p050-implementation-of-kinect-fusion-algorithm-for-3d-reconstruction-using-rgbd-images/" target="_blank">
+              <papertitle>Cyclops - A Spatial AI based Assistant for Visually Impaired People</papertitle>
+            </a>
+            <br>
+            <strong>Kaustubh Sadekar</strong>,
+            <a href="https://bigmb.github.io/" target="_blank">Malav Bateriwala</a>,
+            <a href="https://in.linkedin.com/in/vishruthkumar" target="_blank">Vishruth Kumar</a>
+            <br>
+            <a href="https://github.com/kaustubh-sadekar/Cyclops-Visual-Assistant">Project Page</a> / 
+            <a href="https://opencv.org/announcing-the-opencv-spatial-ai-competition-sponsored-by-intel-phase-1-winners/" target="_blank"> Competetion Results</a>
+            <br>
+            <p>Cyclops is a spatial AI-based assistant for visually impaired people. A OAK-D depth camera based system that recognizes object of interest using speach recongnition and guides the user using object detection and depth estimation.</p>
+            <p style="color:rgb(255, 0, 0)">OpenCV Spatial AI Competetion Phase 1 Winners</p>
+          </td>
+        </tr>
+      </table>
+
+      
+      <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+        <tr>
+          <td width="100%" valign="middle">
+            <heading>FUNdamentals of CV</heading>
+            <p>
+              A series of FUN projects explaining classical 3D computer vision topics like epipolar geometry, calibration, etc.
+            </p>
+          </td>
+        </tr>
+        </table>
+      <!-- <table>
+        <b>Learning <mark>FUN</mark>damentals of Computer Vision </b>
+        <p>
+          A series of fun projects explaining classical computer vision topics like epipolar geometry, calibration, color space etc.
+        </p>
+      </table> -->
+
+      <div style="height:400px;overflow:auto;">
+        
+        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+
+          <tr onmouseout="bhnerf_stop()" onmouseover="bhnerf_start()">
+            <td style="padding:25px;width:25%;vertical-align:middle">
+                <div class="one">
+                  <div class="two" id='dd_image'><img src='gifs/ShadowArt1.gif' width="162"></div>
+                  <img src='gifs/ShadowArt1.gif' width="162">
+                </div>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://openaccess.thecvf.com/content/WACV2022/html/Sadekar_Shadow_Art_Revisited_A_Differentiable_Rendering_Based_Approach_WACV_2022_paper.html" target="_blank">
+                <papertitle>Shadow Art Revisited: A Differentiable Rendering Based Approach</papertitle>
+              </a>
+              <br>
+              <strong>Kaustubh Sadekar</strong>,
+              <a href="https://sites.google.com/iitgn.ac.in/ashishtiwari/" target="_blank">Ashish Tiwari*</a>,
+              <a href="http://people.iitgn.ac.in/~shanmuga/" target="_blank">Shanmuganathan Raman</a>,
+              <br>
+              <em>WACV</em>, 2022
+              <br>
+              <a href="https://kaustubh-sadekar.github.io/ShadowArt-Revisited/" target="_blank">project page</a>/
+              <a href="https://arxiv.org/abs/2107.14539" target="_blank">arXiv</a>/
+              <a href="#">video</a>
+              <p></p>
+              <p>We use differentiable rendering to create artistic 3D sculptures for shadow art effects.</p>
+            </td>
+          </tr>
+        </table>
+
+        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+
+          <tr onmouseout="bhnerf_stop()" onmouseover="bhnerf_start()">
+            <td style="padding:25px;width:25%;vertical-align:middle">
+                <div class="one">
+                  <div class="two" id='dd_image'><img src='gifs/ShadowArt1.gif' width="162"></div>
+                  <img src='gifs/ShadowArt1.gif' width="162">
+                </div>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://openaccess.thecvf.com/content/WACV2022/html/Sadekar_Shadow_Art_Revisited_A_Differentiable_Rendering_Based_Approach_WACV_2022_paper.html" target="_blank">
+                <papertitle>Shadow Art Revisited: A Differentiable Rendering Based Approach</papertitle>
+              </a>
+              <br>
+              <strong>Kaustubh Sadekar</strong>,
+              <a href="https://sites.google.com/iitgn.ac.in/ashishtiwari/" target="_blank">Ashish Tiwari*</a>,
+              <a href="http://people.iitgn.ac.in/~shanmuga/" target="_blank">Shanmuganathan Raman</a>,
+              <br>
+              <em>WACV</em>, 2022
+              <br>
+              <a href="https://kaustubh-sadekar.github.io/ShadowArt-Revisited/" target="_blank">project page</a>/
+              <a href="https://arxiv.org/abs/2107.14539" target="_blank">arXiv</a>/
+              <a href="#">video</a>
+              <p></p>
+              <p>We use differentiable rendering to create artistic 3D sculptures for shadow art effects.</p>
+            </td>
+          </tr>
+        </table>
+
+        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+
+          <tr onmouseout="bhnerf_stop()" onmouseover="bhnerf_start()">
+            <td style="padding:25px;width:25%;vertical-align:middle">
+                <div class="one">
+                  <div class="two" id='dd_image'><img src='gifs/ShadowArt1.gif' width="162"></div>
+                  <img src='gifs/ShadowArt1.gif' width="162">
+                </div>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://openaccess.thecvf.com/content/WACV2022/html/Sadekar_Shadow_Art_Revisited_A_Differentiable_Rendering_Based_Approach_WACV_2022_paper.html" target="_blank">
+                <papertitle>Shadow Art Revisited: A Differentiable Rendering Based Approach</papertitle>
+              </a>
+              <br>
+              <strong>Kaustubh Sadekar</strong>,
+              <a href="https://sites.google.com/iitgn.ac.in/ashishtiwari/" target="_blank">Ashish Tiwari*</a>,
+              <a href="http://people.iitgn.ac.in/~shanmuga/" target="_blank">Shanmuganathan Raman</a>,
+              <br>
+              <em>WACV</em>, 2022
+              <br>
+              <a href="https://kaustubh-sadekar.github.io/ShadowArt-Revisited/" target="_blank">project page</a>/
+              <a href="https://arxiv.org/abs/2107.14539" target="_blank">arXiv</a>/
+              <a href="#">video</a>
+              <p></p>
+              <p>We use differentiable rendering to create artistic 3D sculptures for shadow art effects.</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+    <!-- <div style="height:100px;font:14px Arial, Serif;overflow:auto;">
+      <ul>
+        <li>Update1</li>
+        <li>Update2</li>
+        <li>Update3</li>
+        <li>Update4</li>
+        <li>Update5</li>
+        <li>Update6</li>
+        <li>Update7</li>
+        <li>Update8</li>
+        <li>Update9</li>
+        <li>Update10</li>
+      </ul>
+    </div> -->
+
+    </td>
+    </tr>
+    <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+      <tr>
+        <td>
+        <br>
+        <p align="right">
+          <font size="2">
+          Thanks to <a href="https://jonbarron.info">Jon Barron</a> for this awesome template.<br>
+          Last updated July 2022.
+	    </font>
+        </p>
+        </td>
+      </tr>
+    </table>
+
+  </table>
+  </body>
+</html>
