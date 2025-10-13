@@ -192,6 +192,35 @@ background-color: #ffffd0;
       <td></td>
       </tr>
 
+	<!-- EEGVid -->
+	  <tr onmouseout="bhnerf_stop()" onmouseover="bhnerf_start()">
+		<td style="padding:25px;width:25%;vertical-align:middle">
+		  <div class="one">
+		    <div class="two" id='dd_image'><img src='gifs/EEGvid.png' width="160"></div>
+		    <img src='gifs/EEGvid.png' width="160">
+		  </div>
+		</td>
+		<td style="padding:20px;width:75%;vertical-align:middle">
+		  <a href="https://arxiv.org/abs/2505.21385" target="_blank">
+		    <papertitle>Dynamic Vision from EEG Brain Recordings, How much does EEG know?</papertitle>
+		  </a>
+		  <br>
+		  <strong>Prajwal Singh</strong>,
+		  <a href="https://anupamsharma.in/" target="_blank">Anupam Sharma</a>,
+		  <a href="#" target="_blank">Pankaj Pandey</a>,
+		  <a href="https://iitgn.ac.in/faculty/cse/krishna" target="_blank">Krishna Prasad Miyapuram</a>,
+		  <a href="http://people.iitgn.ac.in/~shanmuga/" target="_blank">Shanmuganathan Raman</a>,
+		  <br>
+		  <em>Arxiv</em>
+		  <br>
+		  <a href="">project page</a>/
+		  <a href="https://arxiv.org/abs/2505.21385">arXiv</a>
+		  <p></p>
+		  <p> \textit{In this work, we study the dynamic visual information encoded in EEG signals and demonstrate how it can be reconstructed using temporally conditioned generative modeling. Further, investigates whether EEG signals contain sufficient information for decoding continuous visual experiences. The framework first learns EEG representations and then synthesizes videos using a temporally conditioned StyleGAN-ADA that maps EEG features to corresponding frame positions. Experiments on SEED, EEG-Video Action, and SEED-DV datasets show that EEG encodes meaningful semantic and temporal information for dynamic vision. Analysis reveals hemispheric asymmetry (left for visual, right for emotional content), the temporal lobe as most informative, and EEG timesteps 100--300 as most critical. Overall, EEGVid demonstrates that EEG provides semantic and temporal cues, while generative priors supply spatial detail, enabling faithful reconstruction of dynamic visual perception.
+		  </p>
+		</td>
+	      </tr>
+	  
   <!-- C^3-NeRF -->
   <tr onmouseout="bhnerf_stop()" onmouseover="bhnerf_start()">
 		<td style="padding:25px;width:25%;vertical-align:middle">
@@ -203,16 +232,16 @@ background-color: #ffffd0;
 		<td style="padding:20px;width:75%;vertical-align:middle">
 		  <a href="https://arxiv.org/abs/2411.19903" target="_blank">
 		    <papertitle>Incremental Multi-Scene Modeling via Continual Neural Graphics Primitives</papertitle>
-		  </a> [NEW]
+		  </a>
 		  <br>
 		  <strong>Prajwal Singh</strong>,
 		  <a href="https://sites.google.com/iitgn.ac.in/ashishtiwari" target="_blank">Ashish Tiwari</a>,
 		  <a href="#" target="_blank">Gautam Vashishtha</a>,
 		  <a href="http://people.iitgn.ac.in/~shanmuga/" target="_blank">Shanmuganathan Raman</a>,
 		  <br>
-		  <!-- <em>Pacific Graphics: Poster</em>, 2023 -->
+		  <em>BMVC 2025</em>
 		  <br>
-		  <a href="">project page</a>/
+		  <a href="https://prajwalsingh.github.io/C-NGP/">project page</a>/
 		  <a href="https://arxiv.org/abs/2411.19903">arXiv</a>
 		  <p></p>
 		  <p> We introduce C-NGP, a scalable framework that encodes multiple 3D scenes into a single NeRF model using pseudo-scene labels for conditioning. It supports continual learning with minimal forgetting, enabling high-quality novel-view rendering across multiple scenes without additional parameters. 
