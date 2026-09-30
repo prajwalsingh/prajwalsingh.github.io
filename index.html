@@ -1,612 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prajwal Kumar Singh</title>
+<meta name="description" content="Prajwal Kumar Singh is a postdoctoral fellow at IIT Gandhinagar working on generative vision, 3D scene learning and EEG-based visual decoding.">
+<meta name="theme-color" content="#1c1959">
+<meta property="og:title" content="Prajwal Kumar Singh">
+<meta property="og:description" content="Generative vision, 3D scene learning and EEG-based visual decoding.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231c1959'/%3E%3Cpath d='M8 36 C16 20 22 20 28 34 S42 48 56 26' fill='none' stroke='%23a5b4fc' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1f1d4a;
+    --body:#37365f;
+    --muted:#65638b;
+    --paper:#f7f7fd;
+    --surface:#ffffff;
+    --line:#dedff2;
+    --indigo-950:#141240;
+    --indigo-900:#1c1959;
+    --indigo-800:#2b2785;
+    --indigo-700:#3730a3;
+    --indigo-600:#4f46e5;
+    --indigo-300:#a5b4fc;
+    --indigo-200:#c7d2fe;
+    --indigo-100:#e0e7ff;
+    --indigo-50:#eef0ff;
+        --sans:'Lato', Verdana, Helvetica, sans-serif;
+  }
+  *{box-sizing:border-box}
+  [hidden]{display:none !important}
+  html{scroll-behavior:smooth;scroll-padding-top:72px}
+  body{margin:0;background:var(--paper);color:var(--body);font:400 16px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+  a{color:var(--indigo-700);text-decoration-thickness:1px;text-underline-offset:3px}
+  a:hover{color:var(--indigo-600)}
+  :focus-visible{outline:2px solid var(--indigo-600);outline-offset:3px;border-radius:3px}
+  .wrap{max-width:1040px;margin:0 auto;padding-left:28px;padding-right:28px}
+  .skip{position:absolute;left:12px;top:-60px;background:#fff;color:var(--indigo-900);padding:8px 14px;border-radius:6px;z-index:50}
+  .skip:focus{top:10px}
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-  <head>
+  /* header */
+  .site-header{position:sticky;top:0;z-index:20;background:rgba(20,18,64,.88);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+  .bar{display:flex;align-items:center;justify-content:space-between;height:58px;gap:24px}
+  .brand{color:#fff;text-decoration:none;font:700 19px var(--sans);white-space:nowrap}
+  .brand:hover{color:#fff}
+  nav{display:flex;gap:26px;overflow-x:auto;scrollbar-width:none}
+  nav::-webkit-scrollbar{display:none}
+  nav a{color:var(--indigo-200);text-decoration:none;font-size:15px;font-weight:700;white-space:nowrap}
+  nav a:hover{color:#fff}
+  .site-header :focus-visible{outline-color:var(--indigo-300)}
 
-  <meta name=viewport content=“width=800”>
-  <meta name="generator" content="HTML Tidy for Linux/x86 (vers 11 February 2007), see www.w3.org">
-  <style type="text/css">
-  /* latin-ext */
-@font-face {
-font-family: 'Lato';
-font-style: italic;
-font-weight: 400;
-src: local('Lato Italic'), local('Lato-Italic'), url(https://fonts.gstatic.com/s/lato/v15/S6u8w4BMUTPHjxsAUi-qNiXg7eU0.woff2) format('woff2');
-unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-font-family: 'Lato';
-font-style: italic;
-font-weight: 400;
-src: local('Lato Italic'), local('Lato-Italic'), url(https://fonts.gstatic.com/s/lato/v15/S6u8w4BMUTPHjxsAXC-qNiXg7Q.woff2) format('woff2');
-unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* latin-ext */
-@font-face {
-font-family: 'Lato';
-font-style: italic;
-font-weight: 700;
-src: local('Lato Bold Italic'), local('Lato-BoldItalic'), url(https://fonts.gstatic.com/s/lato/v15/S6u_w4BMUTPHjxsI5wq_FQftx9897sxZ.woff2) format('woff2');
-unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-font-family: 'Lato';
-font-style: italic;
-font-weight: 700;
-src: local('Lato Bold Italic'), local('Lato-BoldItalic'), url(https://fonts.gstatic.com/s/lato/v15/S6u_w4BMUTPHjxsI5wq_Gwftx9897g.woff2) format('woff2');
-unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* latin-ext */
-@font-face {
-font-family: 'Lato';
-font-style: normal;
-font-weight: 400;
-src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjxAwXiWtFCfQ7A.woff2) format('woff2');
-unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-font-family: 'Lato';
-font-style: normal;
-font-weight: 400;
-src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjx4wXiWtFCc.woff2) format('woff2');
-unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* latin-ext */
-@font-face {
-font-family: 'Lato';
-font-style: normal;
-font-weight: 700;
-src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v15/S6u9w4BMUTPHh6UVSwaPGQ3q5d0N7w.woff2) format('woff2');
-unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-font-family: 'Lato';
-font-style: normal;
-font-weight: 700;
-src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v15/S6u9w4BMUTPHh6UVSwiPGQ3q5d0.woff2) format('woff2');
-unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
+  /* hero */
+  .hero{position:relative;overflow:hidden;color:#e7e9ff;background:linear-gradient(165deg,var(--indigo-900) 0%,var(--indigo-950) 100%)}
+  .hero canvas{position:absolute;inset:0;width:100%;height:100%;opacity:0;transition:opacity 1.8s ease}
+  .hero canvas.on{opacity:1}
+  .hero::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(20,18,64,.9) 0%,rgba(20,18,64,.62) 48%,rgba(20,18,64,0) 100%)}
+  .hero-inner{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:48px;padding-top:104px;padding-bottom:96px}
+  .hero-text{max-width:760px}
+  h1{margin:0 0 16px;font:400 clamp(44px,7vw,80px)/1.04 var(--sans);letter-spacing:-.02em;color:#f4f5ff}
+  .role{margin:0 0 26px;font-size:19px;font-weight:400;color:var(--indigo-200)}
+  .bio{margin:0 0 16px;font-size:17.5px;line-height:1.7;color:#dde1ff}
+  .bio a{color:#fff}
+  .contact{list-style:none;margin:34px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center}
+  .contact a{color:var(--indigo-200);font-weight:600;font-size:15.5px}
+  .contact a:hover{color:#fff}
+  .contact .cv{background:var(--indigo-100);color:var(--indigo-900);text-decoration:none;padding:8px 20px;border-radius:999px}
+  .contact .cv:hover{background:#fff;color:var(--indigo-900)}
+  .hero :focus-visible{outline-color:var(--indigo-300)}
+  .portrait{width:220px;height:220px;border-radius:50%;object-fit:cover;flex:none;border:3px solid rgba(199,210,254,.35)}
 
-a {
-color: #1772d0;
-text-decoration: none;
-}
-
-a:focus,
-a:hover {
-color: #f09228;
-text-decoration: none;
-}
-
-body,
-td,
-th,
-tr,
-p,
-a {
-font-family: 'Lato', Verdana, Helvetica, sans-serif;
-font-size: 14px;
-text-align: justify;
-text-justify: inter-word;
-}
-
-strong {
-font-family: 'Lato', Verdana, Helvetica, sans-serif;
-font-size: 14px;
-}
-
-heading {
-font-family: 'Lato', Verdana, Helvetica, sans-serif;
-font-size: 24px;
-text-decoration: underline;
-}
-
-papertitle {
-font-family: 'Lato', Verdana, Helvetica, sans-serif;
-font-size: 14px;
-font-weight: 700
-}
-
-name {
-font-family: 'Lato', Verdana, Helvetica, sans-serif;
-font-size: 36px;
-}
-
-.one {
-width: 160px;
-height: 160px;
-position: relative;
-}
-
-.two {
-width: 160px;
-height: 160px;
-position: absolute;
-transition: opacity .2s ease-in-out;
--moz-transition: opacity .2s ease-in-out;
--webkit-transition: opacity .2s ease-in-out;
-}
-
-.fade {
-transition: opacity .2s ease-in-out;
--moz-transition: opacity .2s ease-in-out;
--webkit-transition: opacity .2s ease-in-out;
-}
-
-span.highlight {
-background-color: #ffffd0;
-}
-  </style>
-<!--   <link rel="icon" type="image/png" href="img/avtr.png"> -->
-  <title>Prajwal Singh</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
-  <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-
-  </head>
-  <body>
-  <table width="800" border="0" align="center" cellspacing="0" cellpadding="0">
-      <tr><td colspan="2">
-	        <table align="center" width="100%" border="0" cellspacing="0" cellpadding="20">
-	        <tr>
-		 <td valign="middle" colspan="2">
-			<p align="center">
-			  <name>Prajwal Kumar Singh</name>
-			</p>
-			<p>
-			  Currently, I am a postdoctoral fellow in the CVIG Lab at IIT Gandhinagar. I have completed my PhD in Computer Science and Engineering at IIT Gandhinagar under the guidance of <a href="https://shanmugaiit.github.io/" target="_blank">Prof. Shanmuganathan Raman</a>, supported by the Prime Minister's Research Fellowship (PMRF). My research interests include representation learning, generative networks, 3D vision, and brain-computer interfaces, spanning generative video/3D models and EEG-based visual decoding.
-			</p>
-			<p align=center>
-			  <a href="mailto:singh_prajwal@iitgn.ac.in">Email</a> &nbsp/&nbsp
-			  <a href="https://scholar.google.co.in/citations?user=w5GbFHIAAAAJ&hl=en" target="_blank">Google Scholar</a> &nbsp/&nbsp
-			  <a href="https://github.com/prajwalsingh" target="_blank">GitHub</a> &nbsp/&nbsp
-			  <a href="https://www.linkedin.com/in/prajwalsingh15/" target="_blank">LinkedIn</a> &nbsp/&nbsp
-			  <a href="https://x.com/prajwalsingh_25" target="_blank">Twitter</a> &nbsp/&nbsp
-			  <a href="https://www.youtube.com/@PrajwalSingh15" target="_blank">YoutTube</a> &nbsp/&nbsp
-			  <a href="https://drive.google.com/file/d/1k7C8vyNYlA569bgHsa_CL5evEb4e1-EG/view?usp=sharing" target="_blank">CV</a> &nbsp/&nbsp
-			  <a href="https://htmlpreview.github.io/?https://github.com/prajwalsingh/Python-Notes/blob/master/index.html" target="_blank">Python Notes</a> &nbsp/&nbsp
-			  <a href="https://prajwalsingh.github.io/research-notes/index.html" target="_blank">Research Notes</a>	
-			</p>
-		  </td>
-		<td></td>
-		</tr>
-		</table>
-       </td>
-       <td></td>      
-       </tr>
-
-      <tr><td colspan="2">
-      <!-- Research Publications -->
-      <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-      <tr>
-        <td width="100%" valign="middle">
-          <heading>Publications</heading>
-        </td>
-      </tr>
-      </table>
-      </td>
-      <td></td>
-      </tr>
-
-	<!-- AudioToken -->
-	  <tr onmouseout="bhnerf_stop()" onmouseover="bhnerf_start()">
-		<td style="padding:25px;width:25%;vertical-align:middle">
-		  <div class="one">
-		    <div class="two" id='dd_image'><img src='gifs/audiotok.png' width="160"></div>
-		    <img src='gifs/audiotok.png' width="160">
-		  </div>
-		</td>
-		<td style="padding:20px;width:75%;vertical-align:middle">
-		  <a href="" target="_blank">
-		    <papertitle>Why Multi-Source Audio Fails to Compose: A Geometric Diagnosis and Its Remedy</papertitle>
-		  </a>
-		  <br>
-		  <a href="https://in.linkedin.com/in/anurag-singh-02b0a7290" target="_blank">Anurag Singh</a>,
-		  <strong>Prajwal Singh</strong>,
-		  <a href="http://people.iitgn.ac.in/~shanmuga/" target="_blank">Shanmuganathan Raman</a>
-		  <br>
-		  <em>BMVC 2026</em>
-		  <br>
-		  <a href="">paper</a>/
-		  <a href="">project page</a>
-		  <p></p>
-		  <p> This paper shows why multi-source audio-to-image generation fails. Audio tokens are geometrically misaligned in CLIP space, leading to objects being ignored or merged. We fix this using CLAP-based tokens and spatially separated cross-attention, enabling faithful multi-source image composition.
-		  </p>
-		</td>
-	      </tr>
-	  
-	<!-- CompositionalVideo -->
-	  <tr onmouseout="bhnerf_stop()" onmouseover="bhnerf_start()">
-		<td style="padding:25px;width:25%;vertical-align:middle">
-		  <div class="one">
-		    <div class="two" id='dd_image'><img src='gifs/vastar.png' width="160"></div>
-		    <img src='gifs/vastar.png' width="160">
-		  </div>
-		</td>
-		<td style="padding:20px;width:75%;vertical-align:middle">
-		  <a href="https://openaccess.thecvf.com/content/WACV2026/papers/Singh_Synthesizing_Compositional_Videos_from_Text_Description_WACV_2026_paper.pdf" target="_blank">
-		    <papertitle>Synthesizing Compositional Videos from Text Description</papertitle>
-		  </a>
-		  <br>
-		  <strong>Prajwal Singh</strong>,
-		  <a href="https://kuldeepkulkarni.github.io/" target="_blank">Kuldeep Kulkarni</a>,
-		  <a href="http://people.iitgn.ac.in/~shanmuga/" target="_blank">Shanmuganathan Raman</a>,
-		  <a href="https://rangwani-harsh.github.io/about/" target="_blank">Harsh Rangwani</a>,
-		  <br>
-		  <em>WACV 2026</em>
-		  <br>
-		  <a href="https://openaccess.thecvf.com/content/WACV2026/papers/Singh_Synthesizing_Compositional_Videos_from_Text_Description_WACV_2026_paper.pdf">paper</a>/
-		  <a href="https://prajwalsingh.github.io/Video-ASTAR/">project page</a>
-		  <p></p>
-		  <p> This work tackles the challenge of compositional video generation from a text prompt by employing a straightforward, training-free method using a pre-trained video diffusion model. We have introduced Video-ASTAR with centroid loss for the optimization process over the cross-attention map. With comprehensive empirical results and ablation studies, we show its effectiveness over baselines.
-		  </p>
-		</td>
-	      </tr>  
-	  
-	<!-- EEGVid -->
-	  <tr onmouseout="bhnerf_stop()" onmouseover="bhnerf_start()">
-		<td style="padding:25px;width:25%;vertical-align:middle">
-		  <div class="one">
-		    <div class="two" id='dd_image'><img src='gifs/EEGvid.png' width="160"></div>
-		    <img src='gifs/EEGvid.png' width="160">
-		  </div>
-		</td>
-		<td style="padding:20px;width:75%;vertical-align:middle">
-		  <a href="https://arxiv.org/abs/2505.21385" target="_blank">
-		    <papertitle>Dynamic Vision from EEG Brain Recordings, How much does EEG know?</papertitle>
-		  </a>
-		  <br>
-		  <strong>Prajwal Singh</strong>,
-		  <a href="https://anupamsharma.in/" target="_blank">Anupam Sharma</a>,
-		  <a href="#" target="_blank">Pankaj Pandey</a>,
-		  <a href="https://iitgn.ac.in/faculty/cse/krishna" target="_blank">Krishna Miyapuram</a>,
-		  <a href="http://people.iitgn.ac.in/~shanmuga/" target="_blank">Shanmuganathan Raman</a>,
-		  <br>
-		  <em>Arxiv</em>
-		  <br>
-		  <a href="">project page</a>/
-		  <a href="https://arxiv.org/abs/2505.21385">arXiv</a>
-		  <p></p>
-		  <p> In this work, we study the dynamic visual information encoded in EEG signals and demonstrate how it can be reconstructed using temporally conditioned generative modeling. Further, investigates whether EEG signals contain sufficient information for decoding continuous visual experiences.
-		  </p>
-		</td>
-	      </tr>
-	  
-  <!-- C^3-NeRF -->
-  <tr onmouseout="bhnerf_stop()" onmouseover="bhnerf_start()">
-		<td style="padding:25px;width:25%;vertical-align:middle">
-		  <div class="one">
-		    <div class="two" id='dd_image'><img src='gifs/C3NeRF.png' width="160"></div>
-		    <img src='gifs/C3NeRF.png' width="160">
-		  </div>
-		</td>
-		<td style="padding:20px;width:75%;vertical-align:middle">
-		  <a href="https://arxiv.org/abs/2411.19903" target="_blank">
-		    <papertitle>Incremental Multi-Scene Modeling via Continual Neural Graphics Primitives</papertitle>
-		  </a>
-		  <br>
-		  <strong>Prajwal Singh</strong>,
-		  <a href="https://sites.google.com/iitgn.ac.in/ashishtiwari" target="_blank">Ashish Tiwari</a>,
-		  <a href="#" target="_blank">Gautam Vashishtha</a>,
-		  <a href="http://people.iitgn.ac.in/~shanmuga/" target="_blank">Shanmuganathan Raman</a>,
-		  <br>
-		  <em>BMVC 2025</em>
-		  <br>
-		  <a href="https://prajwalsingh.github.io/C-NGP/">project page</a>/
-		  <a href="https://arxiv.org/abs/2411.19903">arXiv</a>
-		  <p></p>
-		  <p> We introduce C-NGP, a scalable framework that encodes multiple 3D scenes into a single NeRF model using pseudo-scene labels for conditioning. It supports continual learning with minimal forgetting, enabling high-quality novel-view rendering across multiple scenes without additional parameters. 
-		  </p>
-		</td>
-	      </tr>
-
-  <!-- BloomCoreset -->
-  <tr onmouseout="bhnerf_stop()" onmouseover="bhnerf_start()">
-		<td style="padding:25px;width:25%;vertical-align:middle">
-		  <div class="one">
-		    <div class="two" id='dd_image'><img src='gifs/bloomcoreset.png' width="160"></div>
-		    <img src='gifs/bloomcoreset.png' width="160">
-		  </div>
-		</td>
-		<td style="padding:20px;width:75%;vertical-align:middle">
-		  <a href="https://arxiv.org/abs/2412.16942" target="_blank">
-		    <papertitle>BloomCoreset: Fast Coreset Sampling using Bloom Filters for Fine-Grained Self-Supervised Learning</papertitle>
-		  </a>
-		  <br>
-		  <strong>Prajwal Singh</strong>,
-      <a href="#" target="_blank">Gautam Vashishtha</a>,
-		  <a href="https://sites.google.com/iitgn.ac.in/ashishtiwari" target="_blank">Indradeep Mastan</a>,
-		  <a href="http://people.iitgn.ac.in/~shanmuga/" target="_blank">Shanmuganathan Raman</a>
-		  <br>
-		  <em>ICASSP 2025</em>
-		  <br>
-		  <a href="https://github.com/prajwalsingh/BloomCoreset">project page</a>/
-		  <a href="https://arxiv.org/abs/2412.16942">arXiv</a>
-		  <p></p>
-		  <p> We present BloomCoreset, a novel method for efficient subset sampling in fine-grained Self-Supervised Learning (SSL). By leveraging Bloom filters for space-efficient storage and rapid retrieval of image features, BloomCoreset reduces sampling time from large unlabeled datasets (Open-Set) by 98.5%, with only a 0.83% accuracy trade-off on 11 downstream tasks. Integrated with the state-of-the-art SSL framework, SimCore, our approach significantly improves sampling efficiency while maintaining high-quality coreset performance. 
-		  </p>
-		</td>
-	      </tr>
+  /* sections */
+  main section{padding:76px 0}
+  main section + section{border-top:1px solid var(--line)}
+  .sec{display:grid;grid-template-columns:190px minmax(0,1fr);gap:48px}
+  h2{margin:0;font:700 26px/1.2 var(--sans);color:var(--indigo-800);position:sticky;top:84px;align-self:start}
+  h3{margin:0;font:700 18px/1.35 var(--sans);color:var(--indigo-800)}
   
-  <!-- KnotArt -->
-  <tr onmouseout="bhnerf_stop()" onmouseover="bhnerf_start()">
-		<td style="padding:25px;width:25%;vertical-align:middle">
-		  <div class="one">
-		    <div class="two" id='dd_image'><img src='gifs/knotart.png' width="160"></div>
-		    <img src='gifs/knotart.png' width="160">
-		  </div>
-		</td>
-		<td style="padding:20px;width:75%;vertical-align:middle">
-		  <a href="" target="_blank">
-		    <papertitle>Search Me Knot, Render Me Knot: Embedding Search and Differentiable Rendering of Knots in 3D</papertitle>
-		  </a>
-		  <br>
-      		<a href="#" target="_blank">Aalok Gangopadhyay</a>,
-		  <a href="#" target="_blank">Paras Gupta</a>,
-		  <a href="#" target="_blank">Tarun Sharma</a>,
-		  <strong>Prajwal Singh</strong>,
-		  <a href="http://people.iitgn.ac.in/~shanmuga/" target="_blank">Shanmuganathan Raman</a>
-		  <br>
-		  <em>Computer Graphics Forum / Symposium on Geometry Processing</em>, 2024
-		  <br>
-		  <a href="https://github.com/aalok1993/KnotArt">project page</a>/
-		  <a href="https://arxiv.org/abs/2307.08652">arXiv</a>
-		  <p></p>
-		  <p> We propose a fully differentiable framework for designing 3D tubular knot structures that resemble target images from specific viewing angles. Using an invertible neural network and physically-constrained optimization, our method generates realistic and practical knot embeddings, validated through experiments, ablation studies, and a 3D-printed object.
-		  </p>
-		</td>
-	      </tr>
-      
-	<!-- EEGStyleGAN-ADA -->
-	      <tr onmouseout="bhnerf_stop()" onmouseover="bhnerf_start()">
-		<td style="padding:25px;width:25%;vertical-align:middle">
-		  <div class="one">
-		    <div class="two" id='dd_image'><img src='gifs/teaser_eeg2image.png' width="160"></div>
-		    <img src='gifs/teaser_eeg2image.png' width="160">
-		  </div>
-		</td>
-		<td style="padding:20px;width:75%;vertical-align:middle">
-		  <a href="https://arxiv.org/abs/2310.16532" target="_blank">
-		    <papertitle>Learning Robust Deep Visual Representations from EEG Brain Recordings</papertitle>
-		  </a>
-		  <br>
-		  <strong>Prajwal Singh</strong>,
-		  <a href="#" target="_blank">Dwip Dalal</a>,
-		  <a href="#" target="_blank">Gautam Vashishtha</a>,
-		  <a href="https://iitgn.ac.in/faculty/cse/krishna" target="_blank">Krishna Miyapuram</a>,
-		  <a href="http://people.iitgn.ac.in/~shanmuga/" target="_blank">Shanmuganathan Raman</a>,
-		  <br>
-		  <em>WACV 2024 (featured in WACV Daily and Best of WACV 2024)</em>
-		  <br>
-		  <a href="https://github.com/prajwalsingh/EEGStyleGAN-ADA">project page</a>/
-		  <a href="https://arxiv.org/abs/2310.16532">arXiv</a>/
-		  <a href="https://www.rsipvision.com/WACV2024-Saturday/6/">WACV Daily</a>/
-		  <a href="https://www.rsipvision.com/ComputerVisionNews-2024February/14/">Best of WACV 2024</a>
-		  <p></p>
-		  <p> This study presents a two-stage method utilizing EEG-derived features for deep representation learning, demonstrating its generalizability across multiple datasets and achieving superior results in EEG-based image synthesis, including image reconstruction and classification tasks, outperforming existing GAN-based methods.
-		  </p>
-		</td>
-	      </tr>
-	  
-	  
-	<!-- Handshadow Art -->
-	      <tr onmouseout="bhnerf_stop()" onmouseover="bhnerf_start()">
-		<td style="padding:25px;width:25%;vertical-align:middle">
-		  <div class="one">
-		    <div class="two" id='dd_image'><img src='gifs/handshadow.png' width="160"></div>
-		    <img src='gifs/handshadow.png' width="160">
-		  </div>
-		</td>
-		<td style="padding:20px;width:75%;vertical-align:middle">
-		  <a href="https://diglib.eg.org/bitstream/handle/10.2312/pg20231279/107-108.pdf" target="_blank">
-		    <papertitle>Hand Shadow Art: A Differentiable Rendering Perspective</papertitle>
-		  </a>
-		  <br>
-		  <a href="#" target="_blank">Aalok Gangopadhyay</a>,
-		  <strong>Prajwal Singh</strong>,
-		  <a href="https://sites.google.com/iitgn.ac.in/ashishtiwari" target="_blank">Ashish Tiwari</a>,
-		  <a href="http://people.iitgn.ac.in/~shanmuga/" target="_blank">Shanmuganathan Raman</a>,
-		  <br>
-		  <em>Pacific Graphics: Poster</em>, 2023 (<b>Best Poster Award</b>)
-		  <br>
-		  <a href="#">project page</a>/
-		  <a href="#">arXiv</a>/
-		  <a href="https://diglib.eg.org/bitstream/handle/10.2312/pg20231279/107-108.pdf">PG2023</a>
-		  <p></p>
-		  <p> This work introduces a novel approach using differentiable rendering to deform hand models, enabling the creation of meaningful and consistent shadows resembling desired target images.
-		  </p>
-		</td>
-	      </tr>
+  .strands{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:34px}
+  .strands p{margin:8px 0 0;font-size:15.5px;line-height:1.65}
+  .interests{margin:42px 0 0;padding:22px 28px;background:var(--indigo-50);border-left:4px solid var(--indigo-600);border-radius:0 10px 10px 0;font-size:18px;line-height:1.75;color:var(--ink)}
+  .interests strong{color:var(--indigo-800)}
 
-	<!-- TreeGCN-ED -->
-	      <tr onmouseout="bhnerf_stop()" onmouseover="bhnerf_start()">
-		<td style="padding:25px;width:25%;vertical-align:middle">
-		  <div class="one">
-		    <div class="two" id='dd_image'><img src='gifs/TreeGCNED.gif' width="160"></div>
-		    <img src='gifs/TreeGCNED.gif' width="160">
-		  </div>
-		</td>
-		<td style="padding:20px;width:75%;vertical-align:middle">
-		  <a href="https://diglib.eg.org/bitstream/handle/10.2312/pg20231278/105-106.pdf" target="_blank">
-		    <papertitle>TreeGCN-ED: Encoding Point Cloud using a Tree-Structured Graph Network</papertitle>
-		  </a>
-		  <br>
-		  <strong>Prajwal Singh</strong>,
-		  <a href="https://sites.google.com/iitgn.ac.in/ashishtiwari" target="_blank">Ashish Tiwari</a>,
-		  <a href="https://kaustubh-sadekar.github.io/" target="_blank">Kaustubh Sadekar</a>,
-		  <a href="http://people.iitgn.ac.in/~shanmuga/" target="_blank">Shanmuganathan Raman</a>,
-		  <br>
-		  <em>Pacific Graphics: Poster</em>, 2023
-		  <br>
-		  <a href="https://github.com/prajwalsingh/TreeGCN-ED">project page</a>/
-		  <a href="https://arxiv.org/abs/2110.03170">arXiv</a>/
-		  <a href="https://diglib.eg.org/bitstream/handle/10.2312/pg20231278/105-106.pdf">PG2023</a>
-		  <p></p>
-		  <p>This work proposes a tree-structured autoencoder framework to generate robust embeddings of point clouds by utilizing hierarchical information using graph convolution. We perform multiple experiments to assess the quality of embeddings generated by the proposed encoder architecture and visualize the t-SNE map to highlight its ability to distinguish between different object classes. 
-		  </p>
-		</td>
-	      </tr>
-	  
-      <!-- LDRHDR -->
-      <tr onmouseout="bhnerf_stop()" onmouseover="bhnerf_start()">
-        <td style="padding:25px;width:25%;vertical-align:middle">
-            <div class="one">
-              <div class="two" id='dd_image' valign="middle"><img src='gifs/ldrhdr.png' width="160"></div>
-              <img src='gifs/ldrhdr.png' width="160">
-            </div>
-        </td>
-        <td style="padding:20px;width:75%;vertical-align:middle">
-          <a href="https://arxiv.org/abs/2302.10121">
-            <papertitle>Single Image LDR to HDR Conversion using Conditional Diffusion</papertitle>
-          </a>
-          <br> 
-	<a href="#" target="_blank">Dwip Dalal</a>,
-	<a href="#" target="_blank">Gautam Vashishtha</a>,
-	<strong>Prajwal Singh</strong>,
-        <a href="http://people.iitgn.ac.in/~shanmuga/" target="_blank">Shanmuganathan Raman</a>
-        <br>
-        <em>ICIP</em>, 2023
-        <br>
-        <a href="#">project page</a>/
-        <a href="https://arxiv.org/abs/2307.02814">arXiv</a>/
-        <a href="#">video</a>
-        <p></p>
-        <p> We formulate the problem as an image-to-image (I2I) translation task and propose a conditional Denoising Diffusion Probabilistic Model (DDPM) based framework using classifier-free guidance. We incorporate a deep CNN-based autoencoder in our proposed framework to enhance the quality of the latent representation of the input LDR image used for conditioning.
-        </p>
-        </td>
-      </tr>
-	  
-      <!-- EEG2Image -->
-      <tr onmouseout="bhnerf_stop()" onmouseover="bhnerf_start()">
-        <td style="padding:25px;width:25%;vertical-align:middle">
-            <div class="one">
-              <div class="two" id='dd_image' valign="middle"><img src='gifs/EEG2Image_Architecture.png' width="160"></div>
-              <img src='gifs/EEG2Image_Architecture.png' width="160">
-            </div>
-        </td>
-        <td style="padding:20px;width:75%;vertical-align:middle">
-          <a href="https://arxiv.org/abs/2302.10121">
-            <papertitle>EEG2IMAGE: Image Reconstruction from EEG Brain Signals</papertitle>
-          </a>
-          <br> 
-        <strong>Prajwal Singh</strong>,
-	<a href="#" target="_blank">Pankaj Pandey</a>,
-	<a href="https://iitgn.ac.in/faculty/cse/krishna" target="_blank">Krishna Miyapuram</a>,
-        <a href="http://people.iitgn.ac.in/~shanmuga/" target="_blank">Shanmuganathan Raman</a>
-        <br>
-        <em>ICASSP</em>, 2023
-        <br>
-        <a href="https://github.com/prajwalsingh/EEG2Image">project page</a>/
-        <a href="https://arxiv.org/abs/2302.10121">arXiv</a>/
-        <a href="#">video</a>
-        <p></p>
-        <p> We use a contrastive learning method in the proposed framework to extract features from EEG signals and synthesize the images from extracted features using conditional GAN. We modify the loss function to train the GAN, which enables it to synthesize 128x128 images using a small number of images.
-        </p>
-        </td>
-      </tr>
-	  
-	  
-      <!-- APEx-Net -->
-      <tr onmouseout="bhnerf_stop()" onmouseover="bhnerf_start()">
-        <td style="padding:25px;width:25%;vertical-align:middle">
-            <div class="one">
-              <div class="two" id='dd_image' valign="middle"><img src='gifs/apexnet.png' width="160"></div>
-              <img src='gifs/apexnet.png' width="160">
-            </div>
-        </td>
-        <td style="padding:20px;width:75%;vertical-align:middle">
-          <a href="https://ieeexplore.ieee.org/abstract/document/9806720">
-            <papertitle>APEX-Net: Automatic Plot Extraction Network</papertitle>
-          </a>
-          <br>
-	<a href="#" target="_blank">Aalok Gangopadhyay</a>, 
-        <strong>Prajwal Singh</strong>,
-        <a href="http://people.iitgn.ac.in/~shanmuga/" target="_blank">Shanmuganathan Raman</a>
-        <br>
-        <em>NCC</em>, 2022
-        <br>
-        <a href="#">project page</a>/
-        <a href="https://arxiv.org/abs/2101.06217">arXiv</a>/
-        <a href="#">video</a>
-        <p></p>
-        <p> To minimize this intervention, we propose APEX-Net, a deep learning based framework with novel loss functions for solving the plot extraction problem. We introduce APEX-1M, a new large scale dataset which contains both the plot images and the raw data.
-        </p>
-        </td>
-      </tr>
+  .rows{list-style:none;margin:0;padding:0}
+  .rows li{display:grid;grid-template-columns:160px minmax(0,1fr);gap:24px;padding:16px 0;border-top:1px solid var(--line)}
+  .rows li:first-child{border-top:0;padding-top:0}
+  .rows .d{font-size:14.5px;color:var(--muted);padding-top:2px}
+  .rows .what{color:var(--ink);font-weight:600}
+  .rows .sub{display:block;color:var(--body);font-weight:400}
+  .rows .sub em{font-style:italic}
+  .rows .note{display:block;color:var(--muted);font-size:15px;font-weight:400}
 
-      <!-- LS-HDIB -->
-      <tr onmouseout="bhnerf_stop()" onmouseover="bhnerf_start()">
-        <td style="padding:25px;width:25%;vertical-align:middle">
-            <div class="one">
-              <div class="two" id='dd_image'><img src='gifs/pgNet.gif' width="160"></div>
-              <img src='gifs/pgNet.gif' width="160">
-            </div>
-        </td>
-        <td style="padding:20px;width:75%;vertical-align:middle">
-          <a href="https://arxiv.org/abs/2101.11674">
-            <papertitle>LS-HDIB: A Large Scale Handwritten Document Image Binarization Dataset</papertitle>
-          </a>
-          <br>
-	<a href="https://kaustubh-sadekar.github.io/" target="_blank">Kaustubh Sadekar</a>, 
-        <a href="https://sites.google.com/iitgn.ac.in/ashishtiwari/" target="_blank">Ashish Tiwari</a>,
-        <strong>Prajwal Singh</strong>,
-        <a href="http://people.iitgn.ac.in/~shanmuga/" target="_blank">Shanmuganathan Raman</a>
-        <br>
-        <em>ICPR</em>, 2022
-        <br>
-        <a href="https://kaustubh-sadekar.github.io/LS-HDIB/">project page</a>/
-        <a href="https://arxiv.org/abs/2101.11674">arXiv</a>/
-        <a href="#">video</a>
-        <p></p>
-        <p>We propose a large scale dataset of 1 Million challenging images for the task of hand written document image binarisation (HDIB) with accurate segmentation groundtruth.
-        </p>
-        </td>
-      </tr>
-	  
-      <!-- DILIE -->
-      <tr onmouseout="bhnerf_stop()" onmouseover="bhnerf_start()">
-        <td style="padding:25px;width:25%;vertical-align:middle">
-            <div class="one">
-              <div class="two" id='dd_image' valign="middle"><img src='gifs/dilie.png' width="160"></div>
-              <img src='gifs/dilie.png' width="160">
-            </div>
-        </td>
-        <td style="padding:20px;width:75%;vertical-align:middle">
-          <a href="https://openaccess.thecvf.com/content/WACV2022W/VAQ/papers/Mastan_DILIE_Deep_Internal_Learning_for_Image_Enhancement_WACVW_2022_paper.pdf">
-            <papertitle>DILIE: deep internal learning for image enhancement</papertitle>
-          </a>
-          <br>
-	<a href="#" target="_blank">Indradeep Mastan</a>,
-        <a href="http://people.iitgn.ac.in/~shanmuga/" target="_blank">Shanmuganathan Raman</a>,
-	<strong>Prajwal Singh</strong>
-        <br>
-        <em>WACV VAQ Workshop</em>, 2022
-        <br>
-        <a href="#">project page</a>/
-        <a href="#">arXiv</a>/
-        <a href="#">video</a>
-        <p></p>
-        <p> We perform image enhancement using a deep internal learning framework. Our Deep Internal Learning for Image Enhancement framework (DILIE) enhances content features and style features and preserves semantics in the enhanced image.
-        </p>
-        </td>
-      </tr>
+  /* publications */
+  .filters{display:none;gap:4px 26px;margin:0 0 10px;padding:0;flex-wrap:wrap}
+  .js .filters{display:flex}
+  .filters button{background:none;border:0;border-bottom:2px solid transparent;padding:6px 0;font:700 15px var(--sans);color:var(--muted);cursor:pointer}
+  .filters button:hover{color:var(--indigo-700)}
+  .filters button[aria-pressed="true"]{color:var(--indigo-800);border-bottom-color:var(--indigo-600)}
+  .pub-group h4.group{margin:34px 0 4px;font:700 15px var(--sans);color:var(--muted)}
+  .plist{list-style:none;margin:0;padding:0}
+  .paper{display:grid;grid-template-columns:200px minmax(0,1fr);gap:28px;padding:30px 0;border-bottom:1px solid var(--line)}
+  .paper:last-child{border-bottom:0}
+  .paper.compact{display:block;padding:20px 0}
+  .thumb{position:relative;width:200px;aspect-ratio:4/3;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--indigo-50)}
+  .thumb img{display:block;width:100%;height:100%;object-fit:contain}
+  .thumb .ph{display:none}
+  .thumb.missing{background:linear-gradient(150deg,var(--indigo-800),var(--indigo-950));border-color:transparent}
+  .thumb.missing .ph{display:grid;place-items:center;position:absolute;inset:0;color:var(--indigo-200);font:700 22px var(--sans);letter-spacing:.02em}
+  .ptitle{margin:0 0 4px;font:700 18px/1.35 var(--sans);color:var(--ink)}
+  .ptitle a{color:var(--ink);text-decoration:none}
+  .ptitle a:hover{color:var(--indigo-600);text-decoration:underline}
+  .authors{margin:0;font-size:15px;line-height:1.55;color:var(--body)}
+  .authors strong{color:var(--indigo-900);font-weight:700}
+  .authors a{color:var(--body);text-decoration-color:var(--indigo-300)}
+  .authors a:hover{color:var(--indigo-600)}
+  .venue{margin:6px 0 0;font-size:15px;display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center}
+  .venue > span:first-child{font-style:italic;font-weight:400;color:var(--indigo-700)}
+  .badge{font-size:13px;font-weight:600;color:var(--indigo-800);background:var(--indigo-100);padding:2px 10px;border-radius:6px;text-decoration:none}
+  a.badge:hover{background:var(--indigo-200);color:var(--indigo-900)}
+  .abs{margin:12px 0 0;font-size:15.5px;line-height:1.65;max-width:68ch}
+  .links{margin:14px 0 0;display:flex;flex-wrap:wrap;gap:8px}
+  .links a{font-size:13.5px;font-weight:600;text-decoration:none;color:var(--indigo-700);padding:3px 13px;border:1px solid #c9ccf3;border-radius:999px;background:var(--surface)}
+  .links a:hover{background:var(--indigo-50);border-color:var(--indigo-300);color:var(--indigo-800)}
+  .paper.compact .links{margin-top:10px}
 
-    <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-      <tr>
-        <td>
-        <br>
-        <p align="right">
-          <font size="2">
-          Thanks to <a href="https://jonbarron.info" >Jon Barron</a> for this awesome template and <a href="https://pratulsrinivasan.github.io/">Pratul Srinivasan</a> for additional formatting.<br>
-          Last updated July 2023.
-	    </font>
-        </p>
-        </td>
-      </tr>
-    </table>
+  /* footer */
+  footer{background:var(--indigo-950);color:var(--indigo-200);padding:64px 0 48px}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:32px}
+  footer h2{position:static;color:#f4f5ff;margin:0 0 10px}
+  footer p{margin:0 0 6px;color:var(--indigo-200)}
+  footer a{color:#fff}
+  footer a:hover{color:var(--indigo-300)}
+  footer :focus-visible{outline-color:var(--indigo-300)}
+  .foot-links{display:flex;flex-wrap:wrap;gap:8px 22px;align-content:flex-start;max-width:420px;font-weight:600}
+  .updated{width:100%;margin-top:8px;font-size:14px;color:var(--indigo-300)}
 
- </body>
+  @media (max-width:860px){
+    .sec{grid-template-columns:1fr;gap:24px}
+    h2{position:static}
+    .strands{grid-template-columns:1fr;gap:26px}
+    .hero-inner{padding-top:72px;padding-bottom:64px}
+    .portrait{display:none}
+    .hero::after{background:linear-gradient(180deg,rgba(20,18,64,.88) 0%,rgba(20,18,64,.55) 100%)}
+    .brand{display:none}
+    .bar{justify-content:flex-start}
+    main section{padding:56px 0}
+  }
+  @media (max-width:640px){
+    .paper{grid-template-columns:1fr;gap:16px}
+    .thumb{width:100%;max-width:300px}
+    .rows li{grid-template-columns:1fr;gap:2px}
+    .wrap{padding-left:20px;padding-right:20px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .hero canvas{transition:none}
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#research">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="#top">Prajwal Singh</a>
+    <nav aria-label="Sections">
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="https://prajwalsingh.github.io/research-notes/index.html" target="_blank" rel="noopener">Research notes</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <canvas id="waves" aria-hidden="true"></canvas>
+  <div class="wrap hero-inner">
+    <div class="hero-text">
+      <h1>Prajwal Kumar Singh</h1>
+      <p class="role">Postdoctoral fellow, CVIG Lab, IIT Gandhinagar</p>
+      <p class="bio">I recently completed my PhD in Computer Science and Engineering at IIT Gandhinagar under the guidance of <a href="https://shanmugaiit.github.io/" target="_blank" rel="noopener">Prof. Shanmuganathan Raman</a>, supported by the Prime Minister's Research Fellowship.</p>
+      <p class="bio">My work connects how machines create visual content with how the human brain perceives it: generative video and 3D models on one side, EEG-based visual decoding on the other.</p>
+      <ul class="contact">
+        <li><a class="cv" href="https://drive.google.com/file/d/1k7C8vyNYlA569bgHsa_CL5evEb4e1-EG/view?usp=sharing" target="_blank" rel="noopener">Curriculum vitae</a></li>
+        <li><a href="mailto:singh_prajwal@iitgn.ac.in">Email</a></li>
+        <li><a href="https://scholar.google.co.in/citations?user=w5GbFHIAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a></li>
+        <li><a href="https://github.com/prajwalsingh" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/prajwalsingh15/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://x.com/prajwalsingh_25" target="_blank" rel="noopener">X</a></li>
+        <li><a href="https://www.youtube.com/@PrajwalSingh15" target="_blank" rel="noopener">YouTube</a></li>
+      </ul>
+    </div>
+    <img class="portrait" src="images/profile.jpg" alt="Portrait of Prajwal Kumar Singh" width="220" height="220" hidden onload="this.hidden=false" onerror="this.remove()">
+  </div>
+</section>
+
+<main id="main">
+
+  <section id="research">
+    <div class="wrap sec">
+      <h2>Research</h2>
+      <div>
+        <div class="strands">
+          <div>
+            <h3>Generative vision without retraining</h3>
+            <p>Training-free and test-time optimization methods that keep frozen diffusion models consistent, for camera-controlled multi-view synthesis and compositional video generation.</p>
+          </div>
+          <div>
+            <h3>3D scene modeling</h3>
+            <p>Neural graphics primitives that learn many scenes one after another inside a single model, without catastrophic forgetting.</p>
+          </div>
+          <div>
+            <h3>Decoding the brain</h3>
+            <p>Generative architectures that reconstruct still and moving visual stimuli from EEG, with a focus on latent space alignment and semantic analysis.</p>
+          </div>
+        </div>
+        <p class="interests">I am also interested in <strong>representation learning</strong>, <strong>graph neural networks</strong>, <strong>multimodal learning</strong>, <strong>neural rendering</strong> and <strong>brain-computer interfaces</strong>.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="publications">
+    <div class="wrap sec">
+      <h2>Publications</h2>
+      <div>
+        <div class="filters" role="group" aria-label="Filter publications by topic">
+          <button type="button" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" data-filter="generative" aria-pressed="false">Generative vision</button>
+          <button type="button" data-filter="3d" aria-pressed="false">3D and graphics</button>
+          <button type="button" data-filter="eeg" aria-pressed="false">EEG and brain decoding</button>
+          <button type="button" data-filter="other" aria-pressed="false">Other</button>
+        </div>
+
+        <div class="pub-group">
+          <h4 class="group">Papers</h4>
+          <ul class="plist">
+        <li class="paper" data-tags="generative">
+          <div class="thumb"><img src="gifs/audiotok.png" alt="Teaser figure for Why Multi-Source Audio Fails to Compose: A Geometric Diagnosis and Its Remedy" width="200" height="150" loading="lazy" onerror="this.parentNode.classList.add('missing');this.remove()"><span class="ph" aria-hidden="true">BMVC</span></div>
+          <div class="pbody">
+            <h4 class="ptitle">Why Multi-Source Audio Fails to Compose: A Geometric Diagnosis and Its Remedy</h4>
+            <p class="authors"><a href="https://in.linkedin.com/in/anurag-singh-02b0a7290" target="_blank" rel="noopener">Anurag Singh</a>, <strong>Prajwal Singh</strong>, <a href="https://shanmugaiit.github.io/" target="_blank" rel="noopener">Shanmuganathan Raman</a></p>
+            <p class="venue"><span>BMVC 2026</span></p>
+            <p class="abs">This paper explains why multi-source audio-to-image generation fails. Audio tokens sit in misaligned regions of CLIP space, so objects get ignored or merged. CLAP-based tokens and spatially separated cross-attention fix this and give faithful images of every sound source.</p>
+            
+          </div>
+        </li>
+        <li class="paper" data-tags="generative">
+          <div class="thumb"><img src="gifs/vastar.png" alt="Teaser figure for Synthesizing Compositional Videos from Text Description" width="200" height="150" loading="lazy" onerror="this.parentNode.classList.add('missing');this.remove()"><span class="ph" aria-hidden="true">WACV</span></div>
+          <div class="pbody">
+            <h4 class="ptitle"><a href="https://openaccess.thecvf.com/content/WACV2026/papers/Singh_Synthesizing_Compositional_Videos_from_Text_Description_WACV_2026_paper.pdf" target="_blank" rel="noopener">Synthesizing Compositional Videos from Text Description</a></h4>
+            <p class="authors"><strong>Prajwal Singh</strong>, <a href="https://kuldeepkulkarni.github.io/" target="_blank" rel="noopener">Kuldeep Kulkarni</a>, <a href="https://shanmugaiit.github.io/" target="_blank" rel="noopener">Shanmuganathan Raman</a>, <a href="https://rangwani-harsh.github.io/about/" target="_blank" rel="noopener">Harsh Rangwani</a></p>
+            <p class="venue"><span>WACV 2026</span></p>
+            <p class="abs">A training-free method for compositional video generation from a text prompt, built on a pre-trained video diffusion model. Video-ASTAR optimizes the cross-attention maps with a centroid loss and beats baselines in extensive experiments and ablations.</p>
+            <p class="links"><a href="https://openaccess.thecvf.com/content/WACV2026/papers/Singh_Synthesizing_Compositional_Videos_from_Text_Description_WACV_2026_paper.pdf" target="_blank" rel="noopener">Paper</a><a href="https://prajwalsingh.github.io/Video-ASTAR/" target="_blank" rel="noopener">Project page</a></p>
+          </div>
+        </li>
+        <li class="paper" data-tags="eeg">
+          <div class="thumb"><img src="gifs/EEGvid.png" alt="Teaser figure for Beyond Reconstruction: What EEG-to-Video Decoding Actually Recovers" width="200" height="150" loading="lazy" onerror="this.parentNode.classList.add('missing');this.remove()"><span class="ph" aria-hidden="true">EEG</span></div>
+          <div class="pbody">
+            <h4 class="ptitle"><a href="https://www.alphaxiv.org/abs/2505.21385" target="_blank" rel="noopener">Beyond Reconstruction: What EEG-to-Video Decoding Actually Recovers</a></h4>
+            <p class="authors"><strong>Prajwal Singh</strong>, <a href="https://anupamsharma.in/" target="_blank" rel="noopener">Anupam Sharma</a>, Pankaj Pandey, <a href="https://iitgn.ac.in/faculty/cse/krishna" target="_blank" rel="noopener">Krishna Miyapuram</a>, <a href="https://shanmugaiit.github.io/" target="_blank" rel="noopener">Shanmuganathan Raman</a></p>
+            <p class="venue"><span>Preprint</span></p>
+            <p class="abs">We study the dynamic visual information encoded in EEG and show that it can be reconstructed with temporally conditioned generative models. The work also asks what EEG-to-video decoding actually recovers of continuous visual experience.</p>
+            <p class="links"><a href="https://www.alphaxiv.org/abs/2505.21385" target="_blank" rel="noopener">alphaXiv</a><a href="https://arxiv.org/abs/2505.21385" target="_blank" rel="noopener">arXiv</a></p>
+          </div>
+        </li>
+        <li class="paper" data-tags="3d">
+          <div class="thumb"><img src="gifs/C3NeRF.png" alt="Teaser figure for Incremental Multi-Scene Modeling via Continual Neural Graphics Primitives" width="200" height="150" loading="lazy" onerror="this.parentNode.classList.add('missing');this.remove()"><span class="ph" aria-hidden="true">BMVC</span></div>
+          <div class="pbody">
+            <h4 class="ptitle"><a href="https://arxiv.org/abs/2411.19903" target="_blank" rel="noopener">Incremental Multi-Scene Modeling via Continual Neural Graphics Primitives</a></h4>
+            <p class="authors"><strong>Prajwal Singh</strong>, <a href="https://sites.google.com/iitgn.ac.in/ashishtiwari" target="_blank" rel="noopener">Ashish Tiwari</a>, Gautam Vashishtha, <a href="https://shanmugaiit.github.io/" target="_blank" rel="noopener">Shanmuganathan Raman</a></p>
+            <p class="venue"><span>BMVC 2025</span></p>
+            <p class="abs">C-NGP encodes many 3D scenes in a single NeRF, conditioned on pseudo-scene labels. It learns continually with minimal forgetting and renders high quality novel views across scenes without adding parameters.</p>
+            <p class="links"><a href="https://arxiv.org/abs/2411.19903" target="_blank" rel="noopener">arXiv</a><a href="https://prajwalsingh.github.io/C-NGP/" target="_blank" rel="noopener">Project page</a></p>
+          </div>
+        </li>
+        <li class="paper" data-tags="other">
+          <div class="thumb"><img src="gifs/bloomcoreset.png" alt="Teaser figure for BloomCoreset: Fast Coreset Sampling using Bloom Filters for Fine-Grained Self-Supervised Learning" width="200" height="150" loading="lazy" onerror="this.parentNode.classList.add('missing');this.remove()"><span class="ph" aria-hidden="true">ICASSP</span></div>
+          <div class="pbody">
+            <h4 class="ptitle"><a href="https://arxiv.org/abs/2412.16942" target="_blank" rel="noopener">BloomCoreset: Fast Coreset Sampling using Bloom Filters for Fine-Grained Self-Supervised Learning</a></h4>
+            <p class="authors"><strong>Prajwal Singh</strong>, Gautam Vashishtha, Indra Deep Mastan, <a href="https://shanmugaiit.github.io/" target="_blank" rel="noopener">Shanmuganathan Raman</a></p>
+            <p class="venue"><span>ICASSP 2025</span></p>
+            <p class="abs">BloomCoreset stores and retrieves image features with Bloom filters for fine-grained self-supervised learning. It cuts sampling time from large unlabeled datasets by 98.5% at a 0.83% accuracy cost across 11 downstream tasks, and plugs into the SimCore framework.</p>
+            <p class="links"><a href="https://arxiv.org/abs/2412.16942" target="_blank" rel="noopener">arXiv</a><a href="https://github.com/prajwalsingh/BloomCoreset" target="_blank" rel="noopener">Code</a></p>
+          </div>
+        </li>
+        <li class="paper" data-tags="eeg">
+          <div class="thumb"><img src="gifs/teaser_eeg2image.png" alt="Teaser figure for Learning Robust Deep Visual Representations from EEG Brain Recordings" width="200" height="150" loading="lazy" onerror="this.parentNode.classList.add('missing');this.remove()"><span class="ph" aria-hidden="true">WACV</span></div>
+          <div class="pbody">
+            <h4 class="ptitle"><a href="https://arxiv.org/abs/2310.16532" target="_blank" rel="noopener">Learning Robust Deep Visual Representations from EEG Brain Recordings</a></h4>
+            <p class="authors"><strong>Prajwal Singh</strong>, Dwip Dalal, Gautam Vashishtha, <a href="https://iitgn.ac.in/faculty/cse/krishna" target="_blank" rel="noopener">Krishna Miyapuram</a>, <a href="https://shanmugaiit.github.io/" target="_blank" rel="noopener">Shanmuganathan Raman</a></p>
+            <p class="venue"><span>WACV 2024</span><a class="badge" href="https://www.rsipvision.com/WACV2024-Saturday/6/" target="_blank" rel="noopener">Featured in WACV Daily</a><a class="badge" href="https://www.rsipvision.com/ComputerVisionNews-2024February/14/" target="_blank" rel="noopener">Best of WACV 2024</a></p>
+            <p class="abs">A two-stage method that learns deep visual representations from EEG features. It generalizes across datasets and outperforms GAN-based baselines on EEG-based image reconstruction and classification.</p>
+            <p class="links"><a href="https://arxiv.org/abs/2310.16532" target="_blank" rel="noopener">arXiv</a><a href="https://github.com/prajwalsingh/EEGStyleGAN-ADA" target="_blank" rel="noopener">Code</a></p>
+          </div>
+        </li>
+        <li class="paper" data-tags="3d">
+          <div class="thumb"><img src="gifs/knotart.png" alt="Teaser figure for Search Me Knot, Render Me Knot: Embedding Search and Differentiable Rendering of Knots in 3D" width="200" height="150" loading="lazy" onerror="this.parentNode.classList.add('missing');this.remove()"><span class="ph" aria-hidden="true">CGF</span></div>
+          <div class="pbody">
+            <h4 class="ptitle">Search Me Knot, Render Me Knot: Embedding Search and Differentiable Rendering of Knots in 3D</h4>
+            <p class="authors">Aalok Gangopadhyay, Paras Gupta, Tarun Sharma, <strong>Prajwal Singh</strong>, <a href="https://shanmugaiit.github.io/" target="_blank" rel="noopener">Shanmuganathan Raman</a></p>
+            <p class="venue"><span>Computer Graphics Forum 2024</span></p>
+            <p class="abs">A fully differentiable framework for designing 3D tubular knots that resemble a target image from chosen viewpoints. It pairs an invertible neural network with physically constrained optimization, validated by experiments, ablations and a 3D-printed object.</p>
+            <p class="links"><a href="https://arxiv.org/abs/2307.08652" target="_blank" rel="noopener">arXiv</a><a href="https://github.com/aalok1993/KnotArt" target="_blank" rel="noopener">Code</a></p>
+          </div>
+        </li>
+        <li class="paper" data-tags="generative">
+          <div class="thumb"><img src="gifs/ldrhdr.png" alt="Teaser figure for Single Image LDR to HDR Conversion using Conditional Diffusion" width="200" height="150" loading="lazy" onerror="this.parentNode.classList.add('missing');this.remove()"><span class="ph" aria-hidden="true">ICIP</span></div>
+          <div class="pbody">
+            <h4 class="ptitle"><a href="https://arxiv.org/abs/2307.02814" target="_blank" rel="noopener">Single Image LDR to HDR Conversion using Conditional Diffusion</a></h4>
+            <p class="authors">Dwip Dalal, Gautam Vashishtha, <strong>Prajwal Singh</strong>, <a href="https://shanmugaiit.github.io/" target="_blank" rel="noopener">Shanmuganathan Raman</a></p>
+            <p class="venue"><span>ICIP 2023</span></p>
+            <p class="abs">We cast single-image LDR to HDR conversion as image-to-image translation and solve it with a conditional diffusion model using classifier-free guidance. A CNN autoencoder improves the latent representation of the LDR image used for conditioning.</p>
+            <p class="links"><a href="https://arxiv.org/abs/2307.02814" target="_blank" rel="noopener">arXiv</a></p>
+          </div>
+        </li>
+        <li class="paper" data-tags="eeg">
+          <div class="thumb"><img src="gifs/EEG2Image_Architecture.png" alt="Teaser figure for EEG2IMAGE: Image Reconstruction from EEG Brain Signals" width="200" height="150" loading="lazy" onerror="this.parentNode.classList.add('missing');this.remove()"><span class="ph" aria-hidden="true">ICASSP</span></div>
+          <div class="pbody">
+            <h4 class="ptitle"><a href="https://arxiv.org/abs/2302.10121" target="_blank" rel="noopener">EEG2IMAGE: Image Reconstruction from EEG Brain Signals</a></h4>
+            <p class="authors"><strong>Prajwal Singh</strong>, Pankaj Pandey, <a href="https://iitgn.ac.in/faculty/cse/krishna" target="_blank" rel="noopener">Krishna Miyapuram</a>, <a href="https://shanmugaiit.github.io/" target="_blank" rel="noopener">Shanmuganathan Raman</a></p>
+            <p class="venue"><span>ICASSP 2023</span></p>
+            <p class="abs">Contrastive learning extracts features from EEG signals, and a conditional GAN synthesizes images from them. A modified GAN loss lets the model produce 128x128 images from a small training set.</p>
+            <p class="links"><a href="https://arxiv.org/abs/2302.10121" target="_blank" rel="noopener">arXiv</a><a href="https://github.com/prajwalsingh/EEG2Image" target="_blank" rel="noopener">Code</a></p>
+          </div>
+        </li>
+        <li class="paper" data-tags="3d">
+          <div class="thumb"><img src="gifs/handshadow.png" alt="Teaser figure for Hand Shadow Art: A Differentiable Rendering Perspective" width="200" height="150" loading="lazy" onerror="this.parentNode.classList.add('missing');this.remove()"><span class="ph" aria-hidden="true">PG</span></div>
+          <div class="pbody">
+            <h4 class="ptitle"><a href="https://diglib.eg.org/bitstream/handle/10.2312/pg20231279/107-108.pdf" target="_blank" rel="noopener">Hand Shadow Art: A Differentiable Rendering Perspective</a></h4>
+            <p class="authors">Aalok Gangopadhyay, <strong>Prajwal Singh</strong>, <a href="https://sites.google.com/iitgn.ac.in/ashishtiwari" target="_blank" rel="noopener">Ashish Tiwari</a>, <a href="https://shanmugaiit.github.io/" target="_blank" rel="noopener">Shanmuganathan Raman</a></p>
+            <p class="venue"><span>Pacific Graphics 2023, Poster</span><span class="badge">Best Poster Award</span></p>
+            <p class="abs">Differentiable rendering deforms hand models so that the shadows they cast resemble a target image.</p>
+            <p class="links"><a href="https://diglib.eg.org/bitstream/handle/10.2312/pg20231279/107-108.pdf" target="_blank" rel="noopener">Paper</a></p>
+          </div>
+        </li>
+        <li class="paper" data-tags="3d">
+          <div class="thumb"><img src="gifs/TreeGCNED.gif" alt="Teaser figure for TreeGCN-ED: Encoding Point Cloud using a Tree-Structured Graph Network" width="200" height="150" loading="lazy" onerror="this.parentNode.classList.add('missing');this.remove()"><span class="ph" aria-hidden="true">PG</span></div>
+          <div class="pbody">
+            <h4 class="ptitle"><a href="https://diglib.eg.org/bitstream/handle/10.2312/pg20231278/105-106.pdf" target="_blank" rel="noopener">TreeGCN-ED: Encoding Point Cloud using a Tree-Structured Graph Network</a></h4>
+            <p class="authors"><strong>Prajwal Singh</strong>, <a href="https://sites.google.com/iitgn.ac.in/ashishtiwari" target="_blank" rel="noopener">Ashish Tiwari</a>, <a href="https://kaustubh-sadekar.github.io/" target="_blank" rel="noopener">Kaustubh Sadekar</a>, <a href="https://shanmugaiit.github.io/" target="_blank" rel="noopener">Shanmuganathan Raman</a></p>
+            <p class="venue"><span>Pacific Graphics 2023, Poster</span></p>
+            <p class="abs">A tree-structured autoencoder that builds robust point cloud embeddings from hierarchical information using graph convolution. Experiments and a t-SNE map show it separates object classes well.</p>
+            <p class="links"><a href="https://diglib.eg.org/bitstream/handle/10.2312/pg20231278/105-106.pdf" target="_blank" rel="noopener">Paper</a><a href="https://arxiv.org/abs/2110.03170" target="_blank" rel="noopener">arXiv</a><a href="https://github.com/prajwalsingh/TreeGCN-ED" target="_blank" rel="noopener">Code</a></p>
+          </div>
+        </li>
+        <li class="paper" data-tags="other">
+          <div class="thumb"><img src="gifs/apexnet.png" alt="Teaser figure for APEX-Net: Automatic Plot Extractor Network" width="200" height="150" loading="lazy" onerror="this.parentNode.classList.add('missing');this.remove()"><span class="ph" aria-hidden="true">NCC</span></div>
+          <div class="pbody">
+            <h4 class="ptitle"><a href="https://ieeexplore.ieee.org/abstract/document/9806720" target="_blank" rel="noopener">APEX-Net: Automatic Plot Extractor Network</a></h4>
+            <p class="authors">Aalok Gangopadhyay, <strong>Prajwal Singh</strong>, <a href="https://shanmugaiit.github.io/" target="_blank" rel="noopener">Shanmuganathan Raman</a></p>
+            <p class="venue"><span>NCC 2022</span></p>
+            <p class="abs">A deep learning framework with new loss functions that extracts data from plot images and cuts down manual effort. We also release APEX-1M, a large dataset of plot images paired with their raw data.</p>
+            <p class="links"><a href="https://ieeexplore.ieee.org/abstract/document/9806720" target="_blank" rel="noopener">Paper</a><a href="https://arxiv.org/abs/2101.06217" target="_blank" rel="noopener">arXiv</a></p>
+          </div>
+        </li>
+        <li class="paper" data-tags="other">
+          <div class="thumb"><img src="gifs/pgNet.gif" alt="Teaser figure for LS-HDIB: A Large Scale Handwritten Document Image Binarization Dataset" width="200" height="150" loading="lazy" onerror="this.parentNode.classList.add('missing');this.remove()"><span class="ph" aria-hidden="true">ICPR</span></div>
+          <div class="pbody">
+            <h4 class="ptitle"><a href="https://arxiv.org/abs/2101.11674" target="_blank" rel="noopener">LS-HDIB: A Large Scale Handwritten Document Image Binarization Dataset</a></h4>
+            <p class="authors"><a href="https://kaustubh-sadekar.github.io/" target="_blank" rel="noopener">Kaustubh Sadekar</a>, <a href="https://sites.google.com/iitgn.ac.in/ashishtiwari" target="_blank" rel="noopener">Ashish Tiwari</a>, <strong>Prajwal Singh</strong>, <a href="https://shanmugaiit.github.io/" target="_blank" rel="noopener">Shanmuganathan Raman</a></p>
+            <p class="venue"><span>ICPR 2022</span></p>
+            <p class="abs">A dataset of one million challenging handwritten document images with accurate segmentation ground truth, built for handwritten document image binarization.</p>
+            <p class="links"><a href="https://arxiv.org/abs/2101.11674" target="_blank" rel="noopener">arXiv</a><a href="https://kaustubh-sadekar.github.io/LS-HDIB/" target="_blank" rel="noopener">Project page</a></p>
+          </div>
+        </li>
+        <li class="paper" data-tags="other">
+          <div class="thumb"><img src="gifs/dilie.png" alt="Teaser figure for DILIE: Deep Internal Learning for Image Enhancement" width="200" height="150" loading="lazy" onerror="this.parentNode.classList.add('missing');this.remove()"><span class="ph" aria-hidden="true">WACVW</span></div>
+          <div class="pbody">
+            <h4 class="ptitle"><a href="https://openaccess.thecvf.com/content/WACV2022W/VAQ/papers/Mastan_DILIE_Deep_Internal_Learning_for_Image_Enhancement_WACVW_2022_paper.pdf" target="_blank" rel="noopener">DILIE: Deep Internal Learning for Image Enhancement</a></h4>
+            <p class="authors">Indra Deep Mastan, <a href="https://shanmugaiit.github.io/" target="_blank" rel="noopener">Shanmuganathan Raman</a>, <strong>Prajwal Singh</strong></p>
+            <p class="venue"><span>WACV 2022, VAQ Workshop</span></p>
+            <p class="abs">Image enhancement with deep internal learning. DILIE improves content and style features while preserving the semantics of the enhanced image.</p>
+            <p class="links"><a href="https://openaccess.thecvf.com/content/WACV2022W/VAQ/papers/Mastan_DILIE_Deep_Internal_Learning_for_Image_Enhancement_WACVW_2022_paper.pdf" target="_blank" rel="noopener">Paper</a></p>
+          </div>
+        </li>
+          </ul>
+        </div>
+
+        <div class="pub-group">
+          <h4 class="group">Preprints</h4>
+          <ul class="plist">
+        <li class="paper compact" data-tags="generative">
+          <div class="pbody">
+            <h4 class="ptitle"><a href="https://arxiv.org/abs/2609.03639" target="_blank" rel="noopener">Stabilizing Camera-Controlled Novel View Synthesis at Inference Time</a></h4>
+            <p class="authors"><strong>Prajwal Singh</strong>, Arjun Badola, Seema Kumari, Hajime Nagahara, <a href="https://shanmugaiit.github.io/" target="_blank" rel="noopener">Shanmuganathan Raman</a></p>
+            <p class="venue"><span>arXiv 2026</span></p>
+            <p class="links"><a href="https://arxiv.org/abs/2609.03639" target="_blank" rel="noopener">arXiv</a></p>
+          </div>
+        </li>
+        <li class="paper compact" data-tags="eeg">
+          <div class="pbody">
+            <h4 class="ptitle"><a href="https://arxiv.org/abs/2602.20932" target="_blank" rel="noopener">Hierarchic-EEG2Text: Assessing EEG-To-Text Decoding across Hierarchical Abstraction Levels</a></h4>
+            <p class="authors"><a href="https://anupamsharma.in/" target="_blank" rel="noopener">Anupam Sharma</a>, H. Katti, <strong>Prajwal Singh</strong>, <a href="https://shanmugaiit.github.io/" target="_blank" rel="noopener">Shanmuganathan Raman</a>, <a href="https://iitgn.ac.in/faculty/cse/krishna" target="_blank" rel="noopener">Krishna Miyapuram</a></p>
+            <p class="venue"><span>arXiv 2026</span></p>
+            <p class="links"><a href="https://arxiv.org/abs/2602.20932" target="_blank" rel="noopener">arXiv</a></p>
+          </div>
+        </li>
+        <li class="paper compact" data-tags="3d">
+          <div class="pbody">
+            <h4 class="ptitle"><a href="https://arxiv.org/abs/2306.13452" target="_blank" rel="noopener">A Graph Neural Network Approach for Temporal Mesh Blending and Correspondence</a></h4>
+            <p class="authors">Aalok Gangopadhyay, Abhinav Narayan Harish, <strong>Prajwal Singh</strong>, <a href="https://shanmugaiit.github.io/" target="_blank" rel="noopener">Shanmuganathan Raman</a></p>
+            <p class="venue"><span>arXiv 2023</span></p>
+            <p class="links"><a href="https://arxiv.org/abs/2306.13452" target="_blank" rel="noopener">arXiv</a></p>
+          </div>
+        </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap sec">
+      <h2>Experience</h2>
+      <ul class="rows">
+        <li><span class="d">Now</span><span class="what">Postdoctoral fellow<span class="sub">CVIG Lab, IIT Gandhinagar, India</span></span></li>
+        <li><span class="d">May 2025 to Oct 2025</span><span class="what">PhD research intern<span class="sub">Chat3D, France (online)</span></span></li>
+        <li><span class="d">May 2024 to Nov 2024</span><span class="what">PhD research intern<span class="sub">Adobe, Bangalore, India</span></span></li>
+        <li><span class="d">May 2021 to Sep 2021</span><span class="what">Junior research fellow<span class="sub">IIT Gandhinagar, India</span></span></li>
+        <li><span class="d">May 2019 to Jun 2019</span><span class="what">Freelancer, GATE CSE<span class="sub">Gradeup (Gradestack Learning Pvt Ltd)</span></span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="wrap sec">
+      <h2>Education</h2>
+      <div>
+        <ul class="rows">
+          <li><span class="d">Oct 2021 to May 2026</span><span class="what">PhD in Computer Science<span class="sub">IIT Gandhinagar, India. PMRF scholar, advised by Dr. Shanmuganathan Raman. CGPA 9.71/10.</span><span class="note">Thesis: <em>Scalable Generative Vision and Neural Decoding: Connecting Machine and Human Perception</em></span></span></li>
+          <li><span class="d">Jul 2019 to May 2021</span><span class="what">M.Tech. in Computer Science and Engineering<span class="sub">IIT Gandhinagar, India. Advised by Dr. Shanmuganathan Raman. CGPA 8.89/10.</span><span class="note">Thesis: <em>Generating 3D Shapes and Images from the Embedding of Images and Text</em></span></span></li>
+        </ul>
+        <h3 style="margin:48px 0 18px">Recognition</h3>
+        <ul class="rows">
+          <li><span class="d">2024</span><span>Learning Robust Deep Visual Representations from EEG Brain Recordings featured in WACV Daily and Best of WACV 2024.</span></li>
+          <li><span class="d">2023</span><span>Best Poster Award at Pacific Graphics for Hand Shadow Art: A Differentiable Rendering Perspective.</span></li>
+          <li><span class="d">2021 to 2026</span><span>Prime Minister's Research Fellowship (PMRF).</span></li>
+          <li><span class="d">2019</span><span>GATE CS: 98.69 percentile, rank 1,309 out of 99,932 candidates.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div>
+      <h2>Get in touch</h2>
+      <p><a href="mailto:singh_prajwal@iitgn.ac.in">singh_prajwal@iitgn.ac.in</a></p>
+      <p>CVIG Lab, IIT Gandhinagar, Gujarat, India</p>
+    </div>
+    <div class="foot-links">
+      <a href="https://scholar.google.co.in/citations?user=w5GbFHIAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
+      <a href="https://github.com/prajwalsingh" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/prajwalsingh15/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://x.com/prajwalsingh_25" target="_blank" rel="noopener">X</a>
+      <a href="https://www.youtube.com/@PrajwalSingh15" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://htmlpreview.github.io/?https://github.com/prajwalsingh/Python-Notes/blob/master/index.html" target="_blank" rel="noopener">Python notes</a>
+      <a href="https://prajwalsingh.github.io/research-notes/index.html" target="_blank" rel="noopener">Research notes</a>
+    </div>
+    <p class="updated">Last updated September 2026</p>
+  </div>
+</footer>
+
+<script>
+  document.documentElement.classList.add('js');
+
+  /* publication filter */
+  (function(){
+    var btns = Array.prototype.slice.call(document.querySelectorAll('.filters button'));
+    var items = Array.prototype.slice.call(document.querySelectorAll('.paper'));
+    var groups = Array.prototype.slice.call(document.querySelectorAll('.pub-group'));
+    btns.forEach(function(b){
+      b.addEventListener('click', function(){
+        var f = b.getAttribute('data-filter');
+        btns.forEach(function(x){ x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+        items.forEach(function(li){
+          li.hidden = !(f === 'all' || li.getAttribute('data-tags').split(' ').indexOf(f) > -1);
+        });
+        groups.forEach(function(g){
+          g.hidden = !g.querySelector('.paper:not([hidden])');
+        });
+      });
+    });
+  })();
+
+  /* hero: slow EEG-like traces */
+  (function(){
+    var c = document.getElementById('waves');
+    if (!c || !c.getContext) return;
+    var ctx = c.getContext('2d');
+    var hero = c.parentNode;
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+    var N = 9, w = 0, h = 0, t = 0, last = 0, raf = 0, visible = true;
+    var tint = ['#a5b4fc', '#818cf8', '#c7d2fe'];
+
+    function size(){
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      w = hero.clientWidth; h = hero.clientHeight;
+      c.width = w * dpr; c.height = h * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+
+    function draw(){
+      ctx.clearRect(0, 0, w, h);
+      ctx.lineWidth = 1.3;
+      ctx.lineJoin = 'round';
+      for (var i = 0; i < N; i++){
+        var base = h * (0.14 + 0.72 * i / (N - 1));
+        var amp = 12 + (i % 4) * 7;
+        var f1 = 0.006 + i * 0.0007, f2 = 0.017 - i * 0.0006, f3 = 0.04;
+        ctx.strokeStyle = tint[i % 3];
+        ctx.globalAlpha = 0.16 + 0.26 * ((i % 5) / 4);
+        ctx.beginPath();
+        for (var x = 0; x <= w; x += 4){
+          var env = 0.35 + 0.65 * Math.sin(Math.PI * x / w);
+          var y = base + env * amp * (
+            Math.sin(x * f1 + t * (0.5 + i * 0.05) + i) +
+            0.6 * Math.sin(x * f2 - t * 0.9 + i * 1.7) +
+            0.25 * Math.sin(x * f3 + t * 1.6 + i * 0.6));
+          if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+      }
+      ctx.globalAlpha = 1;
+    }
+
+    function tick(ts){
+      if (!last) last = ts;
+      t += Math.min((ts - last) / 1000, 0.05);
+      last = ts;
+      draw();
+      raf = (visible && !reduce.matches) ? requestAnimationFrame(tick) : 0;
+    }
+
+    function start(){
+      last = 0;
+      if (reduce.matches){ draw(); return; }
+      if (!raf) raf = requestAnimationFrame(tick);
+    }
+
+    size(); draw();
+    requestAnimationFrame(function(){ c.classList.add('on'); });
+    start();
+
+    window.addEventListener('resize', function(){ size(); draw(); });
+    if ('IntersectionObserver' in window){
+      new IntersectionObserver(function(entries){
+        visible = entries[0].isIntersecting;
+        if (visible) start();
+      }).observe(hero);
+    }
+    if (reduce.addEventListener) reduce.addEventListener('change', start);
+  })();
+</script>
+</body>
 </html>
